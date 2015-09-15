@@ -1,7 +1,7 @@
 # TaxiExpress
 Trabajo de curso Desarrollo web
 
-# Pasos realizados: (no es necesario volver a realizarlo)
+## Pasos realizados: (no es necesario volver a realizarlo)
 
 * Crear proyecto
     * rails new taxiexpress -d mysql  
@@ -18,7 +18,7 @@ Trabajo de curso Desarrollo web
     * rails generate bootstrap:install static
     * rails generate simple_form:install --bootstrap
 
-# Para iniciar por primera vez:
+## Para iniciar por primera vez:
 * despues de clonar "git clone http://...." (obviar este paso si se coloco el url en la creacion de la maquina c9)
 * mysql-ctl start
 * rake db:create
