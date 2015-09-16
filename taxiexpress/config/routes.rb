@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home/login'
+  get 'home/register'
+
   get 'forms/form_pasajero'
 
   get 'operator/dashboard'
