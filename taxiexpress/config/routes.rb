@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'forms/form_pasajero'
+
   get 'operator/dashboard'
 
   get 'passenger/dashboard'
+  get 'forms/login_pasajero'
+  #et 'passenger/index.html'
 
   get 'driver/dashboard'
 

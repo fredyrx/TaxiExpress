@@ -1,0 +1,40 @@
+
+
+<%= form_for @pasajero, :html => {:class => "form-horizontal center"} do |f| %>
+
+      <div class="form-group">
+        <%= f.label :fname, "Usuario:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :fname, class: "form-control" %>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <%= f.label :lname, "Clave:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :lname, class: "form-control" %>
+        </div>
+      </div>
+        
+     <div class="form-group">
+        <%= f.label :lname, "Confirmación_contraseña:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :lname, class: "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :lname, "Correo:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :lname, class: "form-control" %>
+        </div>
+      </div>
+      
+      <div class="radio">
+        <%= f.radio_button :attend, 'yes', :checked => true %> Pasajero.
+        <br />
+        <%= f.radio_button :attend, 'no', :checked => false %> Taxista.
+      </div>
+   
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+ <% end %>
