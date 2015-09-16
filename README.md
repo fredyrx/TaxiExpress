@@ -20,6 +20,7 @@ Trabajo de curso Desarrollo web
 
 ## Para iniciar por primera vez:
 * despues de clonar "git clone http://...." (obviar este paso si se coloco el url en la creacion de la maquina c9)
+* bundle install
 * mysql-ctl start
 * rake db:create
  
