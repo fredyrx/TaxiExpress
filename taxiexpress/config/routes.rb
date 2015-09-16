@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'operator/dashboard'
+
+  get 'passenger/dashboard'
+
+  get 'driver/dashboard'
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
