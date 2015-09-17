@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   get 'operator/dashboard'
   get 'operator/set_driver'
+  get 'operator/fin_services'
+  get 'operator/prices'
+  get 'operator/driver_actives'
+  get 'operator/feedback'
 
   get 'passenger/dashboard'
   get 'forms/login_pasajero'
@@ -20,7 +24,6 @@ Rails.application.routes.draw do
   get 'passenger/rutas'
   get 'passenger/comentarios'
   get 'passenger/mapas'
-  get 'passenger'
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
