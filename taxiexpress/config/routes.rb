@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'passenger/dashboard'
   get 'forms/login_pasajero'
-  #et 'passenger/index.html'
+  #get 'passenger/index.html'
 
   get 'driver/dashboard'
   get 'driver/last_services'
