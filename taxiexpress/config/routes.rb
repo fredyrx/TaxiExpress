@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'driver/last_services'
   get 'driver/pend_services'
   get 'driver/me'
+  
+  get 'passenger/reserva'
 
   get 'home/index'
 
