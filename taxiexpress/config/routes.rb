@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'forms/form_pasajero'
 
   get 'operator/dashboard'
+  get 'operator/set_driver'
 
   get 'passenger/dashboard'
   get 'forms/login_pasajero'
