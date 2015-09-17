@@ -6,16 +6,21 @@ class PassengerController < ApplicationController
     @Pasajero='Pasajero_prueba'
   end
   
-  def pend_services
-  @servicios = [ ]
+  def reserva
+  @reserva = [ ]
   end
 
-  def last_services
-    @servicios = [ ]
+  def rutas
+    @rutas = [ ]
   end
 
 
-  def me
-    @me = {nombre=>"fredy"}
+  def comentarios
+    @me = []
+  end
+  
+  def mapas
+    @maps = []
+    
   end
 end
