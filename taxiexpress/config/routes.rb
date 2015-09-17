@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'passenger/comentarios'
   get 'passenger/mapas'
   get 'home/index'
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
