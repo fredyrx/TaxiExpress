@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'passenger/rutas'
   get 'passenger/comentarios'
   get 'passenger/mapas'
-  get 'passenger'
+  
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
