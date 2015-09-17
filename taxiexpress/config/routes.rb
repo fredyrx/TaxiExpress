@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   #et 'passenger/index.html'
 
   get 'driver/dashboard'
+  get 'driver/last_services'
+  get 'driver/pend_services'
+  get 'driver/me'
 
   get 'home/index'
 
