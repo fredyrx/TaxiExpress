@@ -1,4 +1,9 @@
 class PassengerController < ApplicationController
+  current_user_path = "/passengers/dashboard"
+  def after_sign_in_path_for(resource_or_scope)
+    current_user_path
+  end
+
   def dashboard
     
   end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :operators
+  devise_for :drivers
   devise_for :passengers
   get 'home/login'
   get 'home/register'
@@ -12,7 +14,6 @@ Rails.application.routes.draw do
   get 'operator/driver_actives'
   get 'operator/feedback'
 
-  get 'passenger/dashboard'
   get 'forms/login_pasajero'
   #get 'passenger/index.html'
 
@@ -20,11 +21,12 @@ Rails.application.routes.draw do
   get 'driver/last_services'
   get 'driver/pend_services'
   get 'driver/me'
-  
-  get 'passenger/reserva'
-  get 'passenger/rutas'
-  get 'passenger/comentarios'
-  get 'passenger/mapas'
+
+  get 'passengers/dashboard' =>  "passenger#dashboard"
+  get 'passengers/reserva'
+  get 'passengers/rutas'
+  get 'passengers/comentarios'
+  get 'passengers/mapas'
   get 'home/index'
   
   # The priority is based upon order of creation: first created -> highest priority.

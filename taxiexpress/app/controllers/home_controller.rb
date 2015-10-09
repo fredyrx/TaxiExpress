@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
   def index
     @project = 'Taxi-Express'
+    if passenger_signed_in?
+      redirect_to "/passengers/dashboard"
+    end
   end
   
   def login
