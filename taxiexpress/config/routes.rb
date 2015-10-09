@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :passengers
   get 'home/login'
   get 'home/register'
 

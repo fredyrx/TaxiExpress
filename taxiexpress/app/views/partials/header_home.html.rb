@@ -1,15 +1,4 @@
-<html>
-    <head>
-        <title> Taxi Express</title>   
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= csrf_meta_tags %>
-    </head>
-    <body>
-        
-        <nav class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -36,9 +25,3 @@
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </nav>
-    
-<div class="container" style="padding-top:60px;">
-        <%= yield %>       
-        </div>
-    </body>
-</html>

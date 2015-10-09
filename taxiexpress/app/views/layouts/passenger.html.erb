@@ -19,10 +19,12 @@
                 </button>
                 <a class="navbar-brand" href="/passenger/dashboard">Pasajero</a> 
             </div>
-  <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> Bienvenido &nbsp; <a href="/" class="btn btn-danger square-btn-adjust">Cerrar Sesión</a> </div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">
+               <% if passenger_signed_in? %>
+                   Bienvenido &nbsp; <%= current_passenger.email %>
+                   <%= link_to "Cerrar Sesión", destroy_passenger_session_path, method: :delete, :class => "btn btn-danger square-btn-adjust" %>
+               <% end %>
+       </div>
         </nav> 
         
                    <!-- /. NAV TOP  -->
@@ -65,6 +67,9 @@ font-size: 16px;"> Bienvenido &nbsp; <a href="/" class="btn btn-danger square-bt
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+                                <p class="notice"> <%= notice %> </p>
+                                <p class="alert"> <%= alert %></p>
+
                                 <%= yield %>
                     </div>
                 </div>              
