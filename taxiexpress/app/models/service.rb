@@ -14,5 +14,16 @@ class Service < ActiveRecord::Base
 
   	    return  self.user_driver.name  << " " << self.user_driver.last_name
     end
+    
+    def pay_method_description
+      if self.pay_method == 0
+        descripcion = "Contado" 
+      else 
+        descripcion = "Tarjeta"
+      end
+        
+      return descripcion
+    end
+      
   
 end

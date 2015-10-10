@@ -49,9 +49,6 @@ ActiveRecord::Schema.define(version: 20151010055847) do
     t.integer  "address_destiny_id", limit: 4
   end
 
-  add_index "routes", ["address_destiny_id"], name: "address_destiny_id", using: :btree
-  add_index "routes", ["address_origin_id"], name: "address_origin_id", using: :btree
-
   create_table "services", force: :cascade do |t|
     t.integer  "num_passenger",    limit: 4
     t.string   "car_type",         limit: 255
@@ -66,8 +63,6 @@ ActiveRecord::Schema.define(version: 20151010055847) do
   end
 
   add_index "services", ["route_id"], name: "index_services_on_route_id", using: :btree
-  add_index "services", ["user_customer_id"], name: "user_customer_id", using: :btree
-  add_index "services", ["user_driver_id"], name: "user_driver_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -82,8 +77,8 @@ ActiveRecord::Schema.define(version: 20151010055847) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.string   "name",                   limit: 255
     t.string   "last_name",              limit: 255
+    t.string   "name",                   limit: 255
     t.integer  "num_passenger",          limit: 4
     t.string   "car_type",               limit: 255
     t.string   "state",                  limit: 255
@@ -95,9 +90,5 @@ ActiveRecord::Schema.define(version: 20151010055847) do
 
   add_foreign_key "address_favorites", "addresses"
   add_foreign_key "address_favorites", "users"
-  add_foreign_key "routes", "addresses", column: "address_destiny_id", name: "routes_ibfk_2"
-  add_foreign_key "routes", "addresses", column: "address_origin_id", name: "routes_ibfk_1"
   add_foreign_key "services", "routes"
-  add_foreign_key "services", "users", column: "user_customer_id", name: "services_ibfk_1"
-  add_foreign_key "services", "users", column: "user_driver_id", name: "services_ibfk_2"
 end

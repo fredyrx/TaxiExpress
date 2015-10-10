@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     
   end
   
+  get '/finish_service', to: "services#finish_service", as: "finish_service"
+  
   get 'home/login'
   get 'home/register'
   resources :operator

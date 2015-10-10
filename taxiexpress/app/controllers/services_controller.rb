@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_service, only: [:show, :edit, :update, :destroy, :finish_service]
   before_action :authenticate_user!
   respond_to :html,:json
 
@@ -36,7 +36,7 @@ class ServicesController < ApplicationController
   # POST /services.json
   def create
     @service = Service.new(service_params)
-    
+    @service.state = "R"
     if (current_user.user_type == "C")
       @service.user_customer_id = current_user.id
     end
@@ -76,10 +76,24 @@ class ServicesController < ApplicationController
     end
   end
 
+  def finish
+    codigo = params["format"]
+    puts Service.find(codigo)
+    @service = Service.find(codigo)
+    @service.state = "F"
+    @service.save
+    if @service.update(service_params)
+        format.html { redirect_to "/", notice: 'Service was finished.' }
+    end
+    
+    redirect_to "/", notice: 'Service was finished.'
+  end  
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service
-      @service = Service.find(params[:id])
+        @service = Service.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
