@@ -1,0 +1,65 @@
+
+
+
+        <div class="row text-center ">
+            <div class="col-md-12">
+                <br><br>
+                <h2> <%= @dashboard %>: Login</h2>
+               
+                <h5>( Login yourself to get access )</h5>
+                 <br>
+            </div>
+        </div>
+         <div class="row ">
+             
+               
+               
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                 
+                  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                        <strong>   Enter Details To Login </strong>  
+                            </div>
+                            <div class="panel-body">
+                                <form role="form">
+                                       <br>
+                                     <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                          
+                                             <%= f.email_field :email, required: true, autofocus: true, placeholder: "Your email", class: "form-control"%>
+                                             
+                                        </div>
+                                                                              <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                          
+                                            
+                                            <%= f.password_field :password, required: true, placeholder:"Your Password", class:"form-control" %>
+                                         
+                                        </div>
+                                    <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                
+                                                
+                                                <%= f.check_box :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                                                <%= f.label "remember me"%>
+                                            </label>
+                                            <span class="pull-right">
+                                                   <a href="#">Forget password ? </a> 
+                                            </span>
+                                        </div>
+                                     
+                                    
+                                     
+                                     <%= f.submit "Login Now", class:"btn btn-primary" %>
+                                    <hr>
+                                    <%= render "devise/shared/links" %>
+                                    </form>
+                            </div>
+                           
+                        </div>
+                    </div>
+                <% end %>
+                
+        </div>
+    

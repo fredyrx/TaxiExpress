@@ -9,6 +9,8 @@ class HomeController < ApplicationController
     @link_to_register = "/home/register?type=#{@dashboard}"
     @dashboard.upcase!
     puts ""
+    
+    
   end
   
   def register
@@ -17,5 +19,7 @@ class HomeController < ApplicationController
     @link_to_login = "/home/login?type=#{@dashboard}"
     @dashboard.upcase!
     puts ""
+   # @nuevo_usuario_registrado=Pasajero.create({nombre_pasajero: @nombre_pasajero})
+    
   end
 end

@@ -1,9 +1,18 @@
 class PassengerController < ApplicationController
   def dashboard
-    
+     
+  end
+  
+  def show
+    @pasajero = Pasajero.find(params[:id])
   end
   def login
     @Pasajero='Pasajero_prueba'
+  end
+  
+  def new
+    @pasajero = Pasajero.new
+    
   end
   
   def reserva

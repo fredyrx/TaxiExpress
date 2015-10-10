@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Num passenger:</strong>
+  <%= @service.num_passenger %>
+</p>
+
+<p>
+  <strong>Car type:</strong>
+  <%= @service.car_type %>
+</p>
+
+<p>
+  <strong>Pay method:</strong>
+  <%= @service.pay_method %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @service.state == "R" ? "Reserved" : @service.state == "S" ? "Service" : "End Service"  %>
+</p>
+
+
+
+<p>
+  <strong>Route:</strong>
+    <%= @service.route.description %>
+</p>
+
+<% if current_user.user_type != "C" %>
+<p>
+  <strong>User customer:</strong>
+  <%= @service.full_name_customer %>
+</p>
+<% end %>
+
+<p>
+  <strong>User driver:</strong>
+  <%= @service.state == "R" ? "" : @service.full_name_drive %>
+</p>
+
+<p>
+  <strong>Feedback:</strong>
+  <%= @service.feedback %>
+</p>
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>

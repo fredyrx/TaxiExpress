@@ -1,0 +1,56 @@
+
+
+
+
+        
+         <div class="row">
+               
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            </div>
+                            <div class="panel-body">
+                               <%= simple_form_for(@service) do |f| %>
+                                <br>
+                                      <% if current_user.user_type == "A" &&  @service.state == "R"%>
+                                          <%= f.hidden_field :state,  :as => :hidden, :value => "S" %>
+                                      <% else %>
+                                          <%= f.hidden_field :state,  :as => :hidden, :value => @service.state.nil? ? 'R' : @service.state %>
+                                      <% end %>
+                                      <% if current_user.user_type == "A" %>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                                             <%= collection_select(:service, :user_driver_id, User.where(state: "A"), :id, :description_driver,{}, {id: "new-route"}) %>
+                                        </div>
+                                      <% end %>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                                             <%= collection_select(:service, :route_id, Route.all, :id, :description,{}, {id: "new-route"}) %>
+                                        </div>
+                                    
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                                             <%= f.text_field :num_passenger, required: true, autofocus: true , class:"form-control" , placeholder:"Num Passenger"%>
+                                        </div>
+                                        
+                                         <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                                            <%= f.text_field :car_type, required: true, autofocus: true , class:"form-control" , placeholder:"Card Type"%>
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                                            <%= f.text_field :pay_method, required: true, autofocus: true , class:"form-control" , placeholder:"Pay Method"%>
+                                        </div>
+                                       
+                                       
+                                       <%= f.submit "Reserve", class:"btn btn-success" %>
+                                       <%= link_to 'Back', services_path %>
+                                    <% end %>
+                            </div>
+                           
+                        </div>
+                    </div>
+                
+                
+        </div>
+    

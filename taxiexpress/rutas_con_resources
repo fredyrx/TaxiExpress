@@ -1,0 +1,30 @@
+                 Prefix Verb   URI Pattern                        Controller#Action
+             home_login GET    /home/login(.:format)              home#login
+          home_register GET    /home/register(.:format)           home#register
+         operator_index GET    /operator(.:format)                operator#index
+                        POST   /operator(.:format)                operator#create
+           new_operator GET    /operator/new(.:format)            operator#new
+          edit_operator GET    /operator/:id/edit(.:format)       operator#edit
+               operator GET    /operator/:id(.:format)            operator#show
+                        PATCH  /operator/:id(.:format)            operator#update
+                        PUT    /operator/:id(.:format)            operator#update
+                        DELETE /operator/:id(.:format)            operator#destroy
+    forms_form_pasajero GET    /forms/form_pasajero(.:format)     forms#form_pasajero
+     operator_dashboard GET    /operator/dashboard(.:format)      operator#dashboard
+    operator_set_driver GET    /operator/set_driver(.:format)     operator#set_driver
+  operator_fin_services GET    /operator/fin_services(.:format)   operator#fin_services
+        operator_prices GET    /operator/prices(.:format)         operator#prices
+operator_driver_actives GET    /operator/driver_actives(.:format) operator#driver_actives
+      operator_feedback GET    /operator/feedback(.:format)       operator#feedback
+    passenger_dashboard GET    /passenger/dashboard(.:format)     passenger#dashboard
+   forms_login_pasajero GET    /forms/login_pasajero(.:format)    forms#login_pasajero
+       driver_dashboard GET    /driver/dashboard(.:format)        driver#dashboard
+   driver_last_services GET    /driver/last_services(.:format)    driver#last_services
+   driver_pend_services GET    /driver/pend_services(.:format)    driver#pend_services
+              driver_me GET    /driver/me(.:format)               driver#me
+      passenger_reserva GET    /passenger/reserva(.:format)       passenger#reserva
+        passenger_rutas GET    /passenger/rutas(.:format)         passenger#rutas
+  passenger_comentarios GET    /passenger/comentarios(.:format)   passenger#comentarios
+        passenger_mapas GET    /passenger/mapas(.:format)         passenger#mapas
+             home_index GET    /home/index(.:format)              home#index
+                   root GET    /                                  home#index

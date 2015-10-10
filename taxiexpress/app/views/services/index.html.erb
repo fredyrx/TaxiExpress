@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Services</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>Num passenger</th>
+      <th>Car type</th>
+      <th>Pay method</th>
+      <th>Feedback</th>
+      <th>State</th>
+      <% if current_user.user_type != "C" %>
+      <th>User customer</td>
+      <% end %>
+      <th>User driver</td>
+      <th>Price</td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service.route.description_2 %></td>
+        <td><%= service.num_passenger %></td>
+        <td><%= service.car_type %></td>
+        <td><%= service.pay_method %></td>
+        <td><%= service.feedback %></td>
+        <td><%= service.state == "R" ? "Reserved" : service.state == "S" ? "Service" : "End Service"  %></td>
+        <% if current_user.user_type != "C" %>
+        <td><%= service.full_name_customer %></td>
+        <% end %>
+        <td><%= service.state == "R" ? "" : service.full_name_drive %></td>
+        <td><%= service.route.price %></td>
+        <td><%= link_to 'Show', service %></td>
+        <td><%= link_to 'Edit', edit_service_path(service) %></td>
+        <td>
+           <% if current_user.user_type != "D" %>
+          <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user.user_type == "C" %>
+<%= link_to 'New Service', new_service_path %>
+ <% end %>

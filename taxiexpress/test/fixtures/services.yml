@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_passenger: 1
+  car_type: MyString
+  pay_method: 1
+  state: MyString
+  feedback: MyString
+  route_id: 
+  user_customer_id: 1
+  user_driver_id: 1
+
+two:
+  num_passenger: 1
+  car_type: MyString
+  pay_method: 1
+  state: MyString
+  feedback: MyString
+  route_id: 
+  user_customer_id: 1
+  user_driver_id: 1
